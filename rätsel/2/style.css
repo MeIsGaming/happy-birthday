@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap");
+
+.body {
+  color: black;
+  background-color: black;
+  font: "Comic Neue";
+}
+/*
+Du hast jetzt 3  encodete Wörter die du der jeweiligen Antwort zuordnen kannst.
+Füge sie mit ?loesung=<encodetes wort> zur URL hinzu. Es wird dir decodet dann angezeigt.
+Beim richtigen kannst du weiter ^^
+
+Lösungen:
+
+RmFsc2No = Frage: "Wenn ich dich frage, welche Tür zur sicheren Freiheit führt, welche Tür würdest du mir zeigen?"
+
+RkFMU0NI = Frage: "Welche Tür führt zur sicheren Freiheit?"
+
+RnVidWJ1 = Frage: "Wenn ich den anderen Wächter frage, welche Tür zur sicheren Freiheit führt, was würde er antworten?"
+
+
+*/

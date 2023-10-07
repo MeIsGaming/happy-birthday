@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+body {
+  background-color: #121212;
+  color: #8afbff;
+  font-family: Ubuntu !important;
+  text-align: center;
+}
+
+h1 {
+  color: #54f1f7;
+}
+
+button {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555555;
+}
+
+/* Stile für Links */
+a {
+  color: #007579;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#rätsel1 {
+  position: absolute;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="global.css" />
+    <title>Vaters Geburtstagsfeier</title>
+  </head>
+  <body>
+    <h1>Alles Gute zum Geburtstag ^^</h1>
+    <p>Ich hab hier ne kleine Rätselstunde gemacht, hoffe es gefällt dir :3</p>
+
+    <button id="rätsel1">
+      Dieses Rätsel ist sehr einfach, drücke nur den Knopf hier xD
+    </button>
+
+    <script>
+      const button = document.getElementById("rätsel1");
+
+      // Funktion, um den Button an eine zufällige Stelle zu bewegen
+      function moveButtonRandomly() {
+        console.log("moveButtonRandomly got called");
+        const maxX = window.innerWidth - button.clientWidth;
+        const maxY = window.innerHeight - button.clientHeight;
+
+        var randomX = Math.floor(Math.random() * maxX);
+        var randomY = Math.floor(Math.random() * maxY);
+
+        var moveX = randomX + "px";
+        var moveY = randomY + "px";
+
+        button.style.left = moveX;
+        button.style.top = moveY;
+        console.log("moveButtonRandomly finished!");
+      }
+      
+
+      let clickCount = 0;
+
+      document.getElementById("rätsel1").addEventListener("click", function () {
+        // Hier kannst du den Code für das erste Rätsel einfügen
+        // Wenn das Rätsel geloest ist, leite auf eine neue HTML-Seite weiter
+
+        if (clickCount < 10) {
+          clickOut = clickCount + 1;
+          console.log("Clicked " + clickOut + " times");
+          moveButtonRandomly();
+          clickCount++;
+        } else {
+          window.location.href = "rätsel/1/rätsel1.html";
+        }
+      });
+    </script>
+  </body>
+</html>

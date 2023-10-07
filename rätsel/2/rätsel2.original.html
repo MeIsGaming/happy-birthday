@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rätsel</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Rätsel</h1>
+    <div id="rätsel-content">
+      <!-- Willkommen in den Devtool/dem Sourcecode ^^  -->
+      <!--Du befindest dich in einem Raum mit zwei Türen.
+        Eine Tür führt zur sicheren Freiheit, die andere zu einer explosiven Falle.
+        Vor den Türen stehen zwei Wächter, von denen einer immer die Wahrheit sagt und der andere immer lügt.
+        Du weißt nicht, welcher Wächter die Wahrheit sagt und welcher lügt.
+        Du darfst nur eine Frage stellen, um den Weg zur Freiheit zu finden.
+        Was fragst du?
+    
+    
+        Wenn du etwas nachgedacht hast, gehe in das CSS-File !dieser! Seite. (rot(fglyr.pff))-->
+    </div>
+
+    <script>
+      // Funktion zum Auslesen der Parameter aus der URL
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      // Lies den Parameter "land" aus der URL
+      var urlParam = getParameterByName("loesung");
+
+      // Prüfe, ob der Parameter gesetzt ist und entscheide, ob der Parameter korrekt ist
+      if (urlParam) {
+        var rightParam = "RnVidWJ1"; // Der korrekte Parameter für das nächste Rätsel
+        var wrongParam1 = "RmFsc2No";
+        var wrongParam2 = "RkFMU0NI";
+
+        if (urlParam === rightParam) {
+          // Der Parameter ist korrekt, zeige das nächste Rätsel an
+          document.getElementById("rätsel-content").innerHTML =
+            '<p>RnVidWJ1</p><p>Das war die richtige Antwort.</p><p><a href="../3/rätsel3.html">Weiter</a></p>';
+          // Hier kannst du den Link zur nächsten Rätselseite hinzufügen
+        } else if (urlParam === wrongParam1) {
+          // Der Parameter ist der Falsche (1), zeige eine Fehlermeldung an
+          document.getElementById("rätsel-content").innerHTML =
+            "<p>Falsch</p><p>Denk nochmal nach ^^</p>";
+        } else if (urlParam === wrongParam2) {
+          // Der Parameter ist der Falsche (2), zeige eine Fehlermeldung an
+          document.getElementById("rätsel-content").innerHTML =
+            "<p>FALSCH</p><p>Denk nochmal nach ^^</p>";
+        } else {
+          // Der Parameter ist der Falsche (tippfehler), zeige eine Fehlermeldung an
+          document.getElementById("rätsel-content").innerHTML =
+            "<p>Tippfehler</p><p>Kopiers nochmal ^^</p>";
+        }
+      } else {
+        // Der Parameter "loesung" wurde nicht gefunden, zeige eine Fehlermeldung an
+        document.getElementById("rätsel-content").innerHTML =
+          '<p>Der Parameter "loesung" wurde nicht gefunden.</p><p>Suche das Wort, das du an die URL mit ?loesung=... anhängst!</p>';
+      }
+    </script>
+  </body>
+</html>
